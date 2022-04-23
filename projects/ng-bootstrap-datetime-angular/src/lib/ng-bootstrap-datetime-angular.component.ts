@@ -1,30 +1,12 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  forwardRef,
-  ViewChild,
-  AfterViewInit,
-  Injector
-} from '@angular/core';
-import {
-  NgbTimeStruct,
-  NgbDateStruct,
-  NgbPopoverConfig,
-  NgbPopover,
-  NgbDatepicker
-} from '@ng-bootstrap/ng-bootstrap';
-import {
-  NG_VALUE_ACCESSOR,
-  ControlValueAccessor,
-  NgControl
-} from '@angular/forms';
-import { DatePipe } from '@angular/common';
-import { noop } from 'rxjs';
-import { IfStmt } from '@angular/compiler';
+import {AfterViewInit, Component, forwardRef, Injector, Input, OnInit, ViewChild} from '@angular/core';
+import {NgbDatepicker, NgbDateStruct, NgbPopover, NgbPopoverConfig, NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
+import {DatePipe} from '@angular/common';
+import {noop} from 'rxjs';
 import * as moment_ from 'moment';
 
 const moment = moment_;
+
 @Component({
   selector: 'ng-bootstrap-datetime-angular',
   templateUrl: './ng-bootstrap-datetime-angular.component.html',
@@ -38,8 +20,8 @@ const moment = moment_;
     }
   ]
 })
-export class NgBootstrapDatetimeAngularComponent  implements ControlValueAccessor, OnInit, AfterViewInit {
- 
+export class NgBootstrapDatetimeAngularComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+
   @Input()
   inputDatetimeFormat = 'd/M/yyyy H:mm:ss';
   @Input()
@@ -56,10 +38,10 @@ export class NgBootstrapDatetimeAngularComponent  implements ControlValueAccesso
   @Input()
   disabled = false;
 
-  @ViewChild(NgbDatepicker, null)
+  @ViewChild(NgbDatepicker)
   private dp: NgbDatepicker;
 
-  @ViewChild(NgbPopover, null)
+  @ViewChild(NgbPopover)
   private popover: NgbPopover;
 
   private onTouched: () => void = noop;
@@ -70,7 +52,7 @@ export class NgBootstrapDatetimeAngularComponent  implements ControlValueAccesso
   dateStruct: NgbDateStruct;
   timeStruct: NgbTimeStruct;
   date: Date;
-  
+
   constructor(private config: NgbPopoverConfig, private inj: Injector) {
     config.autoClose = 'outside';
     config.placement = 'auto';
@@ -112,7 +94,8 @@ export class NgBootstrapDatetimeAngularComponent  implements ControlValueAccesso
     this.onTouched = fn;
   }
 
-  onInputChange($event: any) {}
+  onInputChange($event: any) {
+  }
 
   onDateChange(event: NgbDateStruct) {
     this.setDateStringModel();

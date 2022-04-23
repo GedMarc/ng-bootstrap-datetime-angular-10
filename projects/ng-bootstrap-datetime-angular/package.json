@@ -1,6 +1,6 @@
 {
-  "name": "ng-bootstrap-datetime-angular",
-  "version": "0.1.25",
+  "name": "ng-bootstrap-datetime-angular-13",
+  "version": "0.1.30",
   "description": "Angular Bootstrap Date Time Picker",
   "keywords": [
     "Angular",
@@ -14,10 +14,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danilomx/ng-bootstrap-datetime-angular"
+    "url": "https://github.com/GedMarc/ng-bootstrap-datetime-angular-10"
   },
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
   }
 }
